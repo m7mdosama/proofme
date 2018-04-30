@@ -25,10 +25,18 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $items = Item::get();
+
+        return view('dashboard.index', compact('items'));
     }
 
     public function uploadDesign(Request $request) {
+        //echo ($request->method());
+        //echo ('<br>');
+        //var_dump($request);
+        //echo ($request->design_image->getClientOriginalName());
+        //dd ($request->design_image);
+
         $fileName = $request->design_image->store('files');
         $item  = new Item();
         $item->user_id = \Auth::user()->id;
@@ -36,6 +44,9 @@ class DashboardController extends Controller
         $item->item_name = $request->design_image->getClientOriginalName();
         $item->status = 0;
         $item->save();
+
+        $items = Item::get();
+        return view('dashboard.parts.items_list', compact('items'));
     }
 
 }

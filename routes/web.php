@@ -31,7 +31,14 @@ Auth::routes();
 
 Route::get('/',function (){
     return view('welcome');
+})->name('welcome');
+Route::get('/home',function (){
+    return view('home');
 })->name('home');
 //Route::get('/', 'DashboardController@index')->name('index');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-Route::post('/upload', 'DashboardController@uploadDesign')->name('uploadDesign');
+Route::post('/dashboard/upload', 'DashboardController@uploadDesign')->name('uploadDesign');
+
+Route::get('/editor/{id}', 'EditorController@index')->name('editor');
+Route::get('/editor/accept/{id}', 'EditorController@accept')->name('editor.accept');
+Route::post('/editor/addproofer', 'EditorController@addProofer')->name('addProofer');
