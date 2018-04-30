@@ -13,17 +13,17 @@
 
 use App\Role;
 
-Route::get('/ir',function(){
-    //App\Role::create(['name'=>'User','description'=>'test 2']);
-
-    //$x = App\Role::find(4);
-    //if($x->delete())
-    //    echo "Good <br>";
-
-    //echo Role::all();
-
-    return view('welcome');
-});
+//Route::get('/ir',function(){
+//    //App\Role::create(['name'=>'User','description'=>'test 2']);
+//
+//    //$x = App\Role::find(4);
+//    //if($x->delete())
+//    //    echo "Good <br>";
+//
+//    //echo Role::all();
+//
+//    return view('welcome');
+//});
 
 Auth::routes();
 
@@ -31,7 +31,7 @@ Auth::routes();
 
 Route::get('/',function (){
     return view('welcome');
-});
+})->name('home');
 //Route::get('/', 'DashboardController@index')->name('index');
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::post('/upload', 'DashboardController@uploadDesign')->name('uploadDesign');
