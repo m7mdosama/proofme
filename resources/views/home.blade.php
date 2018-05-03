@@ -28,20 +28,20 @@
             <div class="row centered">
                 <div class="col-md-4">
                     <i class="fa fa-heart-o"></i>
-                    <h4>Handsomely Crafted</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <h4>About Laravel</h4>
+                    <p>Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling.</p>
                     <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
                 </div>
                 <div class="col-md-4">
                     <i class="fa fa-flask"></i>
-                    <h4>Retina Ready</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <h4>Learning Laravel</h4>
+                    <p>Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework.</p>
                     <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
                 </div>
                 <div class="col-md-4">
                     <i class="fa fa-trophy"></i>
-                    <h4>Quality Theme</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <h4> Laravel Sponsors</h4>
+                    <p>We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor.</p>
                     <p><br/><a href="#" class="btn btn-theme">More Info</a></p>
                 </div>
             </div>
@@ -56,7 +56,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2">
                     <i class="fa fa-comment-o"></i>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                    <p>If you discover a security vulnerability within Laravel, please don't hesitate to contact us. All security vulnerabilities will be promptly addressed.ProofMe radically simplifies content review and approval. Intuitive to use, yet powerful enough for pros, ProofMe is the only platform built to handle all your videos, images and text. Go from v1 to done in record time.</p>
                     <h4><br/>Marcel Newman</h4>
                     <p>WEB DESIGNER - BLACKTIE.CO</p>
                 </div>

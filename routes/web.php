@@ -30,15 +30,17 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/',function (){
-    return view('welcome');
-})->name('welcome');
-Route::get('/home',function (){
     return view('home');
 })->name('home');
 //Route::get('/', 'DashboardController@index')->name('index');
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard')->middleware('role:1-2-3-4');
 Route::post('/dashboard/upload', 'DashboardController@uploadDesign')->name('uploadDesign');
 
-Route::get('/editor/{id}', 'EditorController@index')->name('editor');
-Route::get('/editor/accept/{id}', 'EditorController@accept')->name('editor.accept');
-Route::post('/editor/addproofer', 'EditorController@addProofer')->name('addProofer');
+
+Route::group(['middleware' => ['role:1-2-3'], 'prefix' => 'editor'], function () {
+    Route::get('/{id}', 'EditorController@index')->name('editor');
+    Route::get('/accept/{id}', 'EditorController@accept')->name('editor.accept');
+    Route::post('/addproofer', 'EditorController@addProofer')->name('addProofer');
+    Route::post('/addComment', 'EditorController@addComment')->name('addComment');
+});
+

@@ -30,14 +30,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{route('welcome')}}">Laravel</a>
+                <a class="navbar-brand" href="{{route('home')}}">Laravel</a>
             </div>
             <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
                     @if (Route::has('login'))
                             @auth
                             <li class="{{(Route::current()->getName() == 'dashboard') ? 'active' : null}}"><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                            <li class="{{(Route::current()->getName() == 'home') ? 'active' : null}}"><a href="{{ url('/home') }}">Home</a></li>
+                            {{--<li class="{{(Route::current()->getName() == 'home') ? 'active' : null}}"><a href="{{ url('/home') }}">Home</a></li>--}}
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
