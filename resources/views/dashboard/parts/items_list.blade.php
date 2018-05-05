@@ -12,6 +12,48 @@
 </div>
 @endif
 
+@if(count($items)==0)
+    <div class="flex-center position-ref full-height">
+        <div class="content">
+            <div class="title">
+                Sorry, no item found.
+            </div>
+        </div>
+    </div>
+    <style>
+        html, body {
+            background-color: #fff;
+            color: #636b6f;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 100;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .full-height {
+            height: 85vh;
+        }
+
+        .flex-center {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .position-ref {
+            position: relative;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .title {
+            font-size: 36px;
+            padding: 20px;
+        }
+    </style>
+@endif
 @foreach($items as $item)
     <div class="col-sm-3">
         <a href="{{route('editor', ['id' => $item->id])}}">

@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="{{asset('assets/ico/favicon.ico')}}">
 
-    <title>Welcome</title>
+    <title>{{config('app.name')}}  - @yield('pageTitle') </title>
 
     <!-- Fonts -->
     <link href="{{asset('assets/css/bootstrap.css')}}" rel="stylesheet">
@@ -30,12 +30,12 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{route('home')}}">Laravel</a>
+                <a class="navbar-brand" href="{{route('home')}}">{{config('app.name')}}</a>
             </div>
             <div class="navbar-collapse collapse navbar-right">
                 <ul class="nav navbar-nav">
                     @if (Route::has('login'))
-                            @auth
+                        @auth
                             <li class="{{(Route::current()->getName() == 'dashboard') ? 'active' : null}}"><a href="{{ route('dashboard') }}">Dashboard</a></li>
                             {{--<li class="{{(Route::current()->getName() == 'home') ? 'active' : null}}"><a href="{{ url('/home') }}">Home</a></li>--}}
                             <li class="dropdown">
@@ -44,6 +44,13 @@
                                 </a>
 
                                 <ul class="dropdown-menu">
+                                    @if(Auth::user()->role_id==1)
+                                    <li>
+                                        <a href="{{ route('admin') }}">
+                                            Admin
+                                        </a>
+                                    </li>
+                                    @endif
                                     <li>
                                         <a href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
@@ -57,11 +64,11 @@
                                     </li>
                                 </ul>
                             </li>
-                            @else
-                                <li><a href="{{ route('login') }}">Login</a></li>
-                                <li><a href="{{ route('register') }}">Register</a></li>
-                                @endauth
-                            @endif
+                        @else
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                        @endauth
+                    @endif
                 </ul>
             </div><!--/.nav-collapse -->
         </div>

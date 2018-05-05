@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('pageTitle','Editor')
 
 @section('content')
     <div class="container editor">
@@ -96,7 +97,7 @@
             bootstrap: true,
             images: ['{{url('uploads/' .$item->file_path)}}'],
             onExport: function(image){},
-            width: 700,			// Width of canvas
+            width: 700,			    // Width of canvas
             height: 600,			// Height of canvas
             color:"#ff2a12", 			// Color for shape and text
             type : "rectangle",		// default shape: can be "rectangle", "arrow" or "text"

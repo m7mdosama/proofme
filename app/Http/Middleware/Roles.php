@@ -16,11 +16,9 @@ class Roles
     public function handle($request, Closure $next, $roleId)
     {
         $roleIds = explode("-", $roleId);
-
-       if( ! in_array(\Auth::user()->role_id, $roleIds)) {
-           return abort(404);
-       }
-
-       return $next($request);
+        if (!in_array(\Auth::user()->role_id, $roleIds)) {
+            return abort(404);
+        }
+        return $next($request);
     }
 }

@@ -1,5 +1,8 @@
 @extends('layouts.master')
 
+
+@section('pageTitle','Dashboard')
+
 @section('content')
 
     <div class="container dashboard">
@@ -18,12 +21,6 @@
     <script>
         $(document).ready(function() {
             $('#items-list').on('change','#design_image',function(){
-                /*$('#upload-form').ajaxForm(function(res){
-
-                });*/
-                {{--$.post('{{route('uploadDesign')}}', new FormData($('#upload-form')[0]), function(res){--}}
-                    {{--alert(res);--}}
-                {{--},false);--}}
                 $.ajax({
                     type: "POST",
                     url: '{{route('uploadDesign')}}',
@@ -33,7 +30,7 @@
                     success: function(data)
                     {
                         if(data){
-                           $('#items-list').html(data);
+                            $('#items-list').html(data);
                         }
                         else{
                             alert('Error');
@@ -121,53 +118,6 @@
             background: url('{{asset('assets/img/add.png')}}')50%/85% 85% no-repeat;
             width: 85%;
             box-shadow: none;
-        }
-
-
-        .dash::-webkit-scrollbar{
-            width: 0;
-        }
-        .row.wow.fadeIn.dash{
-            /*height: auto;*/
-        }
-        .dash .view{
-            /*max-height: 200px;*/
-        }
-        .dash img.img-fluid {
-            width: 100%;
-            height: 270px;
-        }
-        .card.card-cascade.narrower .view {
-            margin-left: 4%;
-            margin-right: 4%;
-            margin-top: -20px;
-        }
-        .card.card-cascade .view {
-            border-radius: .25rem;
-        }
-        .dash .card.card-cascade .view.overlay{
-            box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
-        }
-        .dash .card{
-            background-color: #fffdbbc9;
-            color: #003083;
-        }
-        .card .card-body .card-text{
-            color: #9c9c9c;
-            text-align: center;
-        }
-        .dash .col-md-3 {
-            padding-bottom: 70px;
-        }
-        .stats {
-            float: left;
-            font-size: 30px;
-            color: gray;
-            cursor: pointer;
-            margin-bottom: 0;
-        }
-        .stats[d] {
-            color: green;
         }
     </style>
 @endsection

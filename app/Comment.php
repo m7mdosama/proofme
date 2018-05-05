@@ -14,11 +14,13 @@ class Comment extends Model
         'status',
     ];
 
-    public function item(){
+    public function item()
+    {
         return $this->belongsTo('App\Item');
     }
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo('App\User');
     }
 }
