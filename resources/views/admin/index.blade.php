@@ -69,10 +69,13 @@
                                         <td>{{$X->created_at->diffForHumans()}}</td>
                                         <td>{{$X->updated_at->diffForHumans()}}</td>
                                         <td>
-                                            <button type='button' class='btn btn-primary btn-circle' id='btnEditUser'
-                                                    data-toggle="modal" data-target="#UserModalCenter"
-                                                    data-role="{{$X->role_id}}" data-id="{{$X->id}}">
-                                                <i class='fa fa-edit'></i></button>
+                                            @if($X->id != 1)
+                                                <button type='button' class='btn btn-primary btn-circle'
+                                                        id='btnEditUser'
+                                                        data-toggle="modal" data-target="#UserModalCenter"
+                                                        data-role="{{$X->role_id}}" data-id="{{$X->id}}">
+                                                    <i class='fa fa-edit'></i></button>
+                                            @endif
                                         </td>
                                     </tr>
                                 @endforeach
@@ -147,7 +150,7 @@
 @section('javascript')
     <script>
         $('.roles-table').on('click', 'tr', function(event) {
-            if(event.originalEvent.srcElement.tagName=="TD" ){
+            if((event.originalEvent.originalTarget || event.originalEvent.srcElement).tagName=="TD" ){
                 if($(this).hasClass('active')){
                     $(this).removeClass('active');
                 } else {
@@ -156,7 +159,7 @@
             }
         });
         $('.users-table').on('click', 'tr', function(event) {
-            if(event.originalEvent.srcElement.tagName=="TD" ){
+            if((event.originalEvent.originalTarget || event.originalEvent.srcElement).tagName=="TD" ){
                 if($(this).hasClass('active')){
                     $(this).removeClass('active');
                 } else {

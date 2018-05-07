@@ -16,7 +16,7 @@ use App\Role;
 
 Auth::routes();
 
-Route::get('/',function (){  return view('home'); })->name('home');
+Route::get('/','DashboardController@index')->name('home')->middleware('role:1-2-3-4');
 
 Route::group(['prefix' => 'dashboard'], function () {
     Route::get('/', 'DashboardController@index')->name('dashboard')->middleware('role:1-2-3-4');
